@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.1</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
+    <ProjectGuid>{dc1173ae-c511-48b2-abb5-953005060ddf}</ProjectGuid>
+    <avrdevice>ATmega1284P</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>ENC28J60Test</AssemblyName>
+    <Name>ENC28J60Test</Name>
+    <RootNamespace>ENC28J60Test</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress />
+    <UncachedRange />
+    <OverrideVtorValue />
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.14.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+  <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.directories.IncludePaths><ListValues><Value>..</Value><Value>../avr-liberty-1.0</Value><Value>../avr-liberty-1.0/net</Value><Value>../avr-liberty-1.0/net/conf</Value></ListValues></avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.linker.libraries.Libraries><ListValues><Value>libm</Value></ListValues></avrgcc.linker.libraries.Libraries>
+  <avrgcc.compiler.symbols.DefSymbols><ListValues><Value>NDEBUG</Value></ListValues></avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+</AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+  <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.directories.IncludePaths><ListValues><Value>..</Value><Value>../avr-liberty-1.0</Value><Value>../avr-liberty-1.0/net</Value><Value>../avr-liberty-1.0/net/conf</Value></ListValues></avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.linker.libraries.Libraries><ListValues><Value>libm</Value></ListValues></avrgcc.linker.libraries.Libraries>
+  <avrgcc.compiler.symbols.DefSymbols><ListValues><Value>DEBUG</Value></ListValues></avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+</AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="avr-liberty-1.0\avrlibdefs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\avrlibtypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\buffer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\buffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\debug.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\debug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\arp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\arp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\conf\enc28j60conf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\dhcp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\dhcp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\enc28j60.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\enc28j60.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\icmp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\icmp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\ip.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\ip.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\net.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\net.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\netstack.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\netstack.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\net\nic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\rprintf.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\rprintf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\vt100.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="avr-liberty-1.0\vt100.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ENC28J60Test.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="global.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="avr-liberty-1.0" />
+    <Folder Include="avr-liberty-1.0\net" />
+    <Folder Include="avr-liberty-1.0\net\conf" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
